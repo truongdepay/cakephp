@@ -4,17 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Cat Entity
+ * Result Entity
  *
  * @property int $id
- * @property int|null $status
- * @property string|null $slug
- * @property string|null $title
- * @property int|null $parent
- * @property \Cake\I18n\FrozenTime|null $created
- * @property \Cake\I18n\FrozenTime|null $modified
+ * @property int|null $home
+ * @property int|null $away
+ * @property int|null $home_goal
+ * @property int|null $away_goal
+ * @property int|null $duece
+ * @property int|null $win
  */
-class Cat extends Entity
+class Result extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -26,11 +26,11 @@ class Cat extends Entity
      * @var array
      */
     protected $_accessible = [
-        'status' => true,
-        'slug' => true,
-        'title' => true,
-        'parent' => true,
-        'created' => true,
-        'modified' => true
+        'home' => true,
+        'away' => true,
+        'home_goal' => true,
+        'away_goal' => true,
+        'duece' => true,
+        'win' => true
     ];
 }

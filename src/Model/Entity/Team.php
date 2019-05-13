@@ -4,15 +4,14 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Product Entity
+ * Team Entity
  *
  * @property int $id
- * @property string $name
- * @property string $description
- * @property \Cake\I18n\FrozenTime $created
- * @property \Cake\I18n\FrozenTime $modified
+ * @property string|null $name
+ * @property string|null $shortname
+ * @property int|null $point
  */
-class Product extends Entity
+class Team extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -25,8 +24,7 @@ class Product extends Entity
      */
     protected $_accessible = [
         'name' => true,
-        'description' => true,
-        'created' => true,
-        'modified' => true
+        'shortname' => true,
+        'point' => true
     ];
 }

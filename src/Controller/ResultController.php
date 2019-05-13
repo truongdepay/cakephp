@@ -4,13 +4,12 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * Post Controller
+ * Result Controller
  *
- * @property \App\Model\Table\PostTable $Post
  *
- * @method \App\Model\Entity\Post[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Result[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class PostController extends AppController
+class ResultController extends AppController
 {
     /**
      * Index method
@@ -19,25 +18,25 @@ class PostController extends AppController
      */
     public function index()
     {
-        $post = $this->paginate($this->Post);
+        $result = $this->paginate($this->Result);
 
-        $this->set(compact('post'));
+        $this->set(compact('result'));
     }
 
     /**
      * View method
      *
-     * @param string|null $id Post id.
+     * @param string|null $id Result id.
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $post = $this->Post->get($id, [
+        $result = $this->Result->get($id, [
             'contain' => []
         ]);
 
-        $this->set('post', $post);
+        $this->set('result', $result);
     }
 
     /**
@@ -47,59 +46,59 @@ class PostController extends AppController
      */
     public function add()
     {
-        $post = $this->Post->newEntity();
-        $cat = $this->Post->getCat(['status' => 1]);
+        $result = $this->Result->newEntity();
+        $team = $this->Result->getListTeam();
         if ($this->request->is('post')) {
-            $post = $this->Post->patchEntity($post, $this->request->getData());
-            if ($this->Post->save($post)) {
-                $this->Flash->success(__('The post has been saved.'));
+            $result = $this->Result->patchEntity($result, $this->request->getData());
+            if ($this->Result->save($result)) {
+                $this->Flash->success(__('The result has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The post could not be saved. Please, try again.'));
+            $this->Flash->error(__('The result could not be saved. Please, try again.'));
         }
-        $this->set(compact('post', 'cat'));
+        $this->set(compact('result', 'team'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Post id.
+     * @param string|null $id Result id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $post = $this->Post->get($id, [
+        $result = $this->Result->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $post = $this->Post->patchEntity($post, $this->request->getData());
-            if ($this->Post->save($post)) {
-                $this->Flash->success(__('The post has been saved.'));
+            $result = $this->Result->patchEntity($result, $this->request->getData());
+            if ($this->Result->save($result)) {
+                $this->Flash->success(__('The result has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The post could not be saved. Please, try again.'));
+            $this->Flash->error(__('The result could not be saved. Please, try again.'));
         }
-        $this->set(compact('post'));
+        $this->set(compact('result'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Post id.
+     * @param string|null $id Result id.
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $post = $this->Post->get($id);
-        if ($this->Post->delete($post)) {
-            $this->Flash->success(__('The post has been deleted.'));
+        $result = $this->Result->get($id);
+        if ($this->Result->delete($result)) {
+            $this->Flash->success(__('The result has been deleted.'));
         } else {
-            $this->Flash->error(__('The post could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The result could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
