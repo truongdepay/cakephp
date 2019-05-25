@@ -16,6 +16,8 @@ class CrawlerController extends AppController
      */
     protected $url;
 
+    protected $urlGenK;
+
     /**
      * @param array $config
      */
@@ -23,12 +25,13 @@ class CrawlerController extends AppController
     {
         parent::initialize();
         $this->url = 'http://bongdaplus.vn';
+        $this->urlGenK = 'http://genk.vn';
     }
 
     public function getContentTranfer()
     {
         $data = [];
-        $url = $this->url . '/ngoai-hang-anh.html';
+        $url = $this->url . '/chuyen-nhuong.html';
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         $page = curl_exec($curl);
@@ -113,4 +116,23 @@ class CrawlerController extends AppController
         ]);
         $this->RequestHandler->renderAs($this, 'json');
     }
+
+    public function getContentGenK()
+    {
+        $data = [];
+        $url = $this->urlGenK . '';
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        $page = curl_exec($curl);
+        $page = str_replace("\n", "", $page);
+        $page = str_replace("\t", "", $page);
+
+        $regexGetNews = "/<div class=\"knswli-left fl\"><a title=\"(.*?)\" href=\"(.*?)\" class=\"kscliw-ava\"><img src=\"(.*?)\" title=\"(.*?)\" alt=\"(.*?)\" (.*?)><\/a><\/div>/";
+        if (preg_match_all($regexGetNews, $page, $match)) {
+            var_dump($match[3]);
+        }
+
+        exit;
+    }
+
 }
