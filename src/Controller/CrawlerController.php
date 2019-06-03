@@ -129,7 +129,7 @@ class CrawlerController extends AppController
 
         $regexGetNews = "/<div class=\"knswli-left fl\"><a title=\"(.*?)\" href=\"(.*?)\" class=\"kscliw-ava\"><img src=\"(.*?)\" title=\"(.*?)\" alt=\"(.*?)\" (.*?)><\/a><\/div>/";
         if (preg_match_all($regexGetNews, $page, $match)) {
-            var_dump($match[3]);
+            var_dump($match[2]);
         }
 
         exit;
