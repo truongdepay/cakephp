@@ -1,0 +1,3 @@
+msgid "translation.index.button.save"
+msgstr "Save"
+

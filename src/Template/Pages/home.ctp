@@ -28,6 +28,7 @@ if (!Configure::read('debug')) :
 endif;
 
 $cakeDescription = 'CakePHP: the rapid development PHP framework';
+$text = "（医）北村医院　　　北村　清明　　　　TEL:　077-537-0051　　　　FAX　077-534-9374（居）あいサポートいしやま　　　藤澤　康子　　　　TEL：　077-574-7901　　　　　　 070-2312-0561　　　　FAX　077-574-7902（他）南老人福祉センター（デイ）　　　　TEL 　077-537-7417（他）大津市社会福祉協議会　奥村　寛之（金銭管理）　　内田　大　　　　TEL　　077-525-9316　　　　FAX　077-521-0207（他）サンタ薬局（南郷店）　　　　TEL　077-533-6880　　　　TEL　077-533-6881　　　　FAX　077-533-6882";
 ?>
 <!DOCTYPE html>
 <html>
@@ -270,6 +271,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             </li>
         </ul>
     </div>
+	<br><?= nl2br($text) ?>
 </div>
 
 </body>
