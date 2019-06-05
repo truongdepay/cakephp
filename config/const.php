@@ -6,4 +6,4 @@
  * Time: 11:49 AM
  */
 const GG_TRAN_PR_ID = 'quickstart-1559329292729';
-const GG_API_KEY = '';
+const GG_API_KEY = 'AIzaSyDCmxf-TtCJ83fnoSHVAKsaWArwJgoj4R4';
