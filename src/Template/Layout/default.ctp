@@ -105,5 +105,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </div>
     <footer>
     </footer>
+    <?= $this->element('Common/modal') ?>
+    <?= $this->element('Common/script') ?>
 </body>
 </html>
