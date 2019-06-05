@@ -18,4 +18,4 @@
 <div class="discontent">
 
 </div>
-<?= $this->element('Translation/script') ?>
+<?= $this->element('Translation/script_index') ?>
