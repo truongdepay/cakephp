@@ -1,3 +1,11 @@
+#common
+msgid "common.loading"
+msgstr "Loading..."
+
+msgid "common.content_null"
+msgstr "Please fill in the content"
+
+#translation
 msgid "translation.index.button.save"
 msgstr "Save"
 
