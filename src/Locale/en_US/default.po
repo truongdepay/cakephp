@@ -2,8 +2,23 @@
 msgid "common.loading"
 msgstr "Loading..."
 
+msgid "common.title.your_post"
+msgstr "Your post"
+
+msgid "common.title.not_post"
+msgstr "You have no posts yet!"
+
+
 msgid "common.content_null"
 msgstr "Please fill in the content"
+
+#common.input
+msgid "common.input.title"
+msgstr "Input title..."
+
+msgid "common.input.content"
+msgstr "Input content..."
+
 
 #translation
 msgid "translation.index.button.save"

@@ -46,7 +46,11 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
         $this->loadComponent('Csrf');
-        $this->loadComponent('cookie');
+        $this->loadComponent('Cookie');
+        $this->Cookie->configKey(COOKIE_NAME, [
+            'expires' => COOKIE_EXPIRES,
+            'httpOnly' => true
+        ]);
 
         /*
         //         * Enable the following component for recommended CakePHP security settings.
