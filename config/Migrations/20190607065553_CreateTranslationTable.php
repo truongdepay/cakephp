@@ -30,6 +30,14 @@ class CreateTranslationTable extends AbstractMigration
             'default' => null,
             'null' => true,
         ]);
+        $table->addColumn('created', 'datetime', [
+            'default' => null,
+            'null' => true,
+        ]);
+        $table->addColumn('modified', 'text', [
+            'default' => null,
+            'null' => true,
+        ]);
         $table->create();
     }
 }

@@ -23,10 +23,13 @@
         line-height: 1;
         padding: 0px 0px;
         word-break: keep-all;
+        border: 1px solid #BDBDBD;
+        border-radius: 2px;
     }
 </style>
 <div class="row">
     <div class="col">
+        <h2><?= $result->title ?></h2>
         <div class="content" id="content">
             <?= base64_decode($result->content) ?>
         </div>

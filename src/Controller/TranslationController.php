@@ -29,18 +29,21 @@ class TranslationController extends AppController
             'key' => GG_API_KEY
         ]);
         $this->hashid = new Hashids(HASHID_STR, HASHID_NUM);
+        $this->layout = 'translation';
     }
 
     public function index()
     {
-
+        $postCookie = $this->Cookie->read(COOKIE_NAME . '.' . COOKIE_POST);
+        $this->set(compact('postCookie'));
     }
 
     public function save()
     {
-        $response = [];
         $content = $this->Translation->newEntity();
         $content = $this->Translation->patchEntity($content, $this->request->getData());
+        $content->title = htmlentities($content->title);
+        $content->content = htmlentities($content->content);
         if ($this->Translation->save($content)) {
             $response = [
                 'result' => 1,
@@ -49,6 +52,12 @@ class TranslationController extends AppController
                     'token' => $content->token
                 ]
             ];
+            $cookie = $this->Cookie->read(COOKIE_NAME . '.' . COOKIE_POST);
+            if (empty($cookie)) {
+                $cookie = [];
+            }
+            $cookie[] = ['id' => $this->hashid->encode($content->id), 'title' => $content->title, 'token' => $content->token, 'created' => $content->created];
+            $this->Cookie->write(COOKIE_NAME, [COOKIE_POST => $cookie]);
         } else {
             $response = [
                 'result' => 0,

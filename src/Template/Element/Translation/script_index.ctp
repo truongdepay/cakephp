@@ -5,8 +5,11 @@
     };
     function saveData(elm) {
         let inputName = $(elm).data('from');
+        let inputTitle = $(elm).data('title');
         let inputFull = "textarea[name="+inputName+"]";
+        let formTitle = "input[name="+inputTitle+"]";
         let content = $(inputFull).val();
+        let title = $(formTitle).val();
         if (content !== '') {
             content = replaceBreak(content);
             let url = '<?= $this->Url->build([
@@ -14,7 +17,8 @@
                 'action' => 'save'
             ]); ?>';
             let csrfToken = '<?= $this->request->getParam('_csrfToken'); ?>';
-            let data = {'content' : content, '_csrfToken' : csrfToken};
+            let data = {'title' : title, 'content' : content};
+            console.log(title);
             $.ajax({
                 headers: {
                     'X-CSRF-Token': csrfToken
