@@ -18,7 +18,6 @@
             ]); ?>';
             let csrfToken = '<?= $this->request->getParam('_csrfToken'); ?>';
             let data = {'title' : title, 'content' : content};
-            console.log(title);
             $.ajax({
                 headers: {
                     'X-CSRF-Token': csrfToken
@@ -48,10 +47,6 @@
     function replaceBreak(content)
     {
         let val = content.replace(/\n/gi,"<br>");
-        val = "<span>" + val;
-        val =val + "</span>";
-        val = val.replace(/ /gi, "</span> <span>");
-        val = val.replace(/<br>/gi, "</span><br><span>");
         return val;
     }
 

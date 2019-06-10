@@ -31,7 +31,7 @@
     <div class="col">
         <h2><?= $result->title ?></h2>
         <div class="content" id="content">
-            <?= base64_decode($result->content) ?>
+            <?= $result->content ?>
         </div>
     </div>
 </div>
