@@ -16,12 +16,12 @@
         top: -15px;
         width: max-content;
         height: 15px;
-        font-size: 10px;
-        font-style: italic;
+        font-size: 11px;
+        /* font-style: italic; */
         background: #dad9d9;
         left: 0px;
         line-height: 1;
-        padding: 0px 0px;
+        padding: 0px 2px;
         word-break: keep-all;
         border: 1px solid #BDBDBD;
         border-radius: 2px;
