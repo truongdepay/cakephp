@@ -10,8 +10,14 @@
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
         "google/cloud-translate": "^1.2",
+<<<<<<< HEAD
         "hashids/hashids": "^4.0",
         "mobiledetect/mobiledetectlib": "2.*"
+=======
+        "hashids/hashids": "^2.0",
+        "mobiledetect/mobiledetectlib": "2.*",
+        "mpdf/mpdf": "^8.0"
+>>>>>>> 5e4cd5d68bf754ed2313e15514bd0dfdaae07df7
     },
     "require-dev": {
         "cakephp/bake": "^1.9.0",
