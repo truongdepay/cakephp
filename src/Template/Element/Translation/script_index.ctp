@@ -46,7 +46,7 @@
 
     function replaceBreak(content)
     {
-        let val = content.replace(/\n/gi,"<br>");
+        let val = content.replace(/\n/gi," <br> ");
         return val;
     }
 
