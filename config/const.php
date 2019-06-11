@@ -18,3 +18,6 @@ const GG_API_KEY = '';
 #common
 const HASHID_STR = 'vuxDyNqyHu8vAJRL';
 const HASHID_NUM = 5;
+
+#session setting
+const SS_TOKEN_TRANSLATE = 'translate.token';
