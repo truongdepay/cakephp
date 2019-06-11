@@ -13,7 +13,7 @@
         let content = CONTENT.html();
 
         let url = '<?= $this->Url->build([
-                'controller' => 'Translation',
+            'controller' => 'Translation',
             'action' => 'update',
             '?' => ['id' => $this->request->getQuery('id')]
         ]) ?>';
@@ -42,6 +42,6 @@
                     $(clickClass).removeClass('clicked');
                 }
             }
-        })
+        });
     });
 </script>

@@ -76,7 +76,9 @@ class TranslationTable extends Table
             $entity->token = $token;
         }
 
-        $entity->content = base64_encode($entity->content);
+        if ($entity->created == null) {
+            $entity->created = time();
+        }
     }
 
     public function getInfo($select, $where)
