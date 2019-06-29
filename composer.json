@@ -9,6 +9,8 @@
         "cakephp/cakephp": "3.7.*",
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
+        "curl/curl": "^2.2",
+        "facebook/graph-sdk": "^5.7",
         "google/cloud-translate": "^1.2",
 <<<<<<< HEAD
         "hashids/hashids": "^4.0",

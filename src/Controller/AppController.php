@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Http\Middleware\CsrfProtectionMiddleware;
 
 /**
  * Application Controller
@@ -45,7 +46,6 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
-        $this->loadComponent('Csrf');
         $this->loadComponent('Cookie');
         $this->Cookie->configKey(COOKIE_NAME, [
             'expires' => COOKIE_EXPIRES,
